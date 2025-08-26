@@ -1,11 +1,44 @@
-# Regression and prediction of the World Happiness Score
-This notebook explores factors influencing subjective happiness using regression-based modeling. Drawing on data from the World Happiness Report, it applies feature selection (Lasso), correlation analysis, and linear regression techniques to assess the relative impact of variables such as social support, GDP per capita, freedom, and life expectancy.
+# 🌍 World Happiness Regression Analysis
+## 🎯 Description
+This notebook explores factors influencing subjective happiness using regression-based modeling. Drawing on data from the World Happiness Report, it applies feature selection (Lasso), correlation analysis, and linear regression techniques to assess the relative impact of variables such as social support, GDP per capita, freedom, and life expectancy. The work can be found in the `happiness.ipynb` notebook.
 
-To ensure robustness, the analysis includes cross-validation and compares three different models—linear regression, decision tree classifier, and random forest regressor—to predict happiness scores based on the most significant features. Among these, the random forest regressor demonstrates the best generalization performance.
+## 📊 Project insights
+- Random Forest emerged as the most accurate model, better capturing nonlinear relationships between happiness and its predictors. The goal was to predict happiness scores using socio-economic indicators. The initial feature selection was performed using Lasso regression and correlation analysis. Then three models were compared—Linear Regression, Decision Tree, and Random Forest—using the set of relevant features previously identified.
 
-All steps are documented to support reproducibility and ongoing refinement. Future work will aim to incorporate additional features, fine-tune the best model, and further assess performance in terms of predictive power.
+## 🔍 Key Analytical Steps
+1. Data Cleaning and Preparation → Drop nulls, standardize column names, and select relevant features.
+2. Exploratory Data Analysis → Correlation heatmaps and scatter plots to visualize relationships.
+3. Feature Selection → Lasso regression to identify impactful variables.
+4. Modeling → Train and evaluation of a Linear Regression, Decision Tree, and Random Forest. Use RMSE and R² for performance comparison.
+5. Interpretation → Feature importance from Random Forest highlights GDP, social support, and health as key drivers.
+
+## 🧰 Libraries used
+
+- `pandas` →	Data manipulation
+- `numpy` →	Numerical operations
+- `matplotlib` → Visualization
+- `seaborn` →	Enhanced plotting
+- `sklearn` →	Modeling and evaluation
+
+## 📁 Project Structure
+```text
+- happiness/
+  - data/
+    - WHI_inflation.csv
+    - happy_new.csv
+    - happy_normalized.csv
+    - world_happiness.csv
+  - happiness.ipynb # Initial linear modelling and model comparison
+  - happiness_2.ipynb # Modelling using the normalized data
+  - happiness_3.ipynb # Fine-tuning the Random Forest Regressor
+  - README.MD
+  - .gitignore
+  - requirements.txt
+```
+*Note: All steps are documented to support reproducibility and ongoing refinement. Future work will aim to incorporate additional features, fine-tune the best model, and further assess performance in terms of predictive power.*
 
 ---
+
 # Regression and prediction: new dataset
 The notebook `happiness_2` applies the same modeling techniques used in `happiness` to train models and predict happiness scores. It uses a larger, machine learning-optimized dataset to enhance prediction.
 
