@@ -39,12 +39,32 @@ This notebook explores factors influencing subjective happiness using regression
 
 ---
 
-# Regression and prediction: new dataset
-The notebook `happiness_2` applies the same modeling techniques used in `happiness` to train models and predict happiness scores. It uses a larger, machine learning-optimized dataset to enhance prediction.
+## 📊 Extended Happiness Regression
+This notebook builds on the initial analysis by applying regression models to a larger, machine learning–optimized dataset. The goal remains to predict happiness scores using socio-economic indicators, but with improved data quality and broader feature coverage. The file `happiness_2.ipynb` contains this work.
 
-The results position the random forest regressor as the model with the best performance.
+## 🔍 Key Analytical Steps
+- Data Preparation
+  - Loaded a refined dataset with more rows and cleaner formatting.
+  - Verified column types and handled missing values.
+
+- Feature Selection
+  - Applied Lasso regression to identify relevant predictors.
+  - Correlation analysis used to assess multicollinearity.
+- Model Training and Evaluation
+  - Compared Linear Regression, Decision Tree, and Random Forest models.
+  - Used RMSE and R² metrics for performance evaluation.
+  - Random Forest again outperformed other models, confirming its robustness on larger datasets.
+- Feature Importance
+  - Visualized top predictors from the Random Forest model.
+  - Social support, GDP per capita, and healthy life expectancy ranked highest.
+
+## 📈 Key Takeaways
+- Larger datasets improve model generalization and reduce overfitting.
+- Random Forest remains the most reliable model for this task.
+- Feature importance is consistent with the first notebook, reinforcing the relevance of social and health indicators.
 
 ---
+
 # Model fine-tuning: grid search optimization
 To enhance model performance, a grid search with cross-validation was applied to the Random Forest Regressor in `happiness_3`. By systematically tuning `n_estimators`, `max_depth`, and `min_samples_split`, the model achieved its best configuration with an R² of 0.7993 and RMSE of 0.4971.
 
