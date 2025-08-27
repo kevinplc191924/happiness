@@ -23,7 +23,7 @@ This notebook explores factors influencing subjective happiness using regression
 ## 📁 Project Structure
 ```text
 - happiness/
-  - data/
+  - data/ # Datasets used and created
     - WHI_inflation.csv
     - happy_new.csv
     - happy_normalized.csv
@@ -46,7 +46,6 @@ This notebook builds on the initial analysis by applying regression models to a 
 - Data Preparation
   - Loaded a refined dataset with more rows and cleaner formatting.
   - Verified column types and handled missing values.
-
 - Feature Selection
   - Applied Lasso regression to identify relevant predictors.
   - Correlation analysis used to assess multicollinearity.
@@ -65,9 +64,40 @@ This notebook builds on the initial analysis by applying regression models to a 
 
 ---
 
-# Model fine-tuning: grid search optimization
-To enhance model performance, a grid search with cross-validation was applied to the Random Forest Regressor in `happiness_3`. By systematically tuning `n_estimators`, `max_depth`, and `min_samples_split`, the model achieved its best configuration with an R² of 0.7993 and RMSE of 0.4971.
+# 📊 Model Fine-Tuning for Happiness Prediction
+This notebook focuses on optimizing the previously identified best model—Random Forest—using hyperparameter tuning to improve predictive accuracy. The performance gains are modest but measurable. The process can be found in `happiness_3.ipynb`.
 
-While inflation-related features were tested, they contributed little to predictive power and were ultimately excluded. In contrast, social and health features consistently emerged as the most influential drivers of happiness scores—reinforcing the idea that well-being is shaped more by social and health conditions than by short-term economic fluctuations.
+## 🔍 Key Analytical Steps
+- Baseline
+  - Reused Forest following early findings to establish reference scores.
+  - Fitted the model again, including inflation features —which did not improve the performance—.
+  - `n_estimators = 100`, `max_depth = 5`, `min_samples_split = 5`.
+  - Initial Random Forest results: `RMSE = 0.5294`, `R² = 0.7724`.
+
+- Hyperparameter Tuning
+  - Used `GridSearchCV` to explore combinations of `n_estimators`, `max_depth`, `min_samples_split`.
+
+- Best parameters for Random Forest Regressor:
+  - `n_estimators = 300`
+  - `max_depth = 10`
+  - `min_samples_split = 4`
+  - Random Forest results after tuning: `RMSE = 0.4971`, `R² = 0.7993`
+  - Improvement is present but not significative.
+
+- Feature Importance
+
+  Top predictors remain consistent, although the last two—corruption and generosity—showed more relative importance.
+  - Social support
+  - GDP per capita
+  - Healthy life expectancy
+  - Perceptions of corruption
+  - Generosity
+
+
+📈 Key Takeaways
+- Inflation-related features were ultimately excluded. They did not significantly enhanced model performance.
+- Hyperparameter tuning yields slight improvements in accuracy.
+- Final Random Forest model is marginally better but not transformative.
+- Feature importance remains stable, reinforcing the reliability of social/health predictors.
 
 ---
