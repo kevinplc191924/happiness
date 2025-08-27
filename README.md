@@ -33,7 +33,7 @@ This notebook explores factors influencing subjective happiness using regression
   - happiness_3.ipynb # Fine-tuning the Random Forest Regressor
   - README.MD
   - .gitignore
-  - requirements.txt
+  - environment.yml
 ```
 *Note: All steps are documented to support reproducibility and ongoing refinement. Future work will aim to incorporate additional features, fine-tune the best model, and further assess performance in terms of predictive power.*
 
