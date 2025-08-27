@@ -39,7 +39,7 @@ This notebook explores factors influencing subjective happiness using regression
 
 ---
 
-## 📊 Extended Happiness Regression
+# 📊 Extended Happiness Regression
 This notebook builds on the initial analysis by applying regression models to a larger, machine learning–optimized dataset. The goal remains to predict happiness scores using socio-economic indicators, but with improved data quality and broader feature coverage. The file `happiness_2.ipynb` contains this work.
 
 ## 🔍 Key Analytical Steps
